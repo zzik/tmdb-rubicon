@@ -6,4 +6,5 @@ cd tmdb
 npm i
 npm run dev
 ```
-## Vite starts my dev server on localhost:5173 for some reason, couldn't figure out why 👶
+
+[http://127.0.0.1:5173/](url)
