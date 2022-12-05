@@ -1,7 +1,6 @@
 # The Movie Database API test assignment
 
-## node, typescript
-## React
+## Node, Typescript, React
 
 ## Run the following commands in your terminal:
 ```
@@ -11,5 +10,4 @@ npm i
 npm run dev
 ```
 
-### Default Vite port:
-[http://127.0.0.1:5173/](url)
+### Default Vite port: [http://127.0.0.1:5173/](url)
