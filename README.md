@@ -1,7 +1,7 @@
 # The Movie Database
 ## Node, Typescript, React API test assignment
 
-## Run the following commands in your terminal:
+### Run the following commands in your terminal:
 ```
 git clone https://github.com/zzik/tmdb-rubicon.git tmdb
 cd tmdb
