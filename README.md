@@ -1,6 +1,5 @@
-# The Movie Database API test assignment
-
-## Node, Typescript, React
+# The Movie Database
+## Node, Typescript, React API test assignment
 
 ## Run the following commands in your terminal:
 ```
