@@ -1,27 +1,23 @@
 import React, {useContext} from 'react'
-import { TypeContext } from '../App'
-import { apiKey, url } from './hooks/Fetch'
+import { TypeContext } from './context/TypeContext'
+import {test} from './utils/index'
 
-interface Item {
+interface Props {
+    key: string,
     id: number,
     title?: string,
     name?:string,
     poster_path: string,
     backdrop_path: string,
-    vote_average: number,
-    genre_ids: number[],
-    overview?: string
 }
 
+export const CardItem: React.FC<Props> = ({id, title, name, backdrop_path, poster_path}) => {
 
-export const CardItem: React.FC<Item> = ({ id, backdrop_path, genre_ids, poster_path, title, vote_average, overview, name }) => {
-    const context = useContext(TypeContext)
-    let contentType = context?.is==='Movies' ? 'movie/' : 'tv/'
-    return (
-        <a href={url+contentType+id+apiKey}>
-            <h1>{title} {name}</h1>
-            <h1>{vote_average}</h1>
-            <p>{overview}</p>
-        </a>
-    )
+    const type = useContext(TypeContext).contentType
+    const link = test.url + type + `/${id}` + test.apiKey
+
+    return <a href={link}>
+        <h1>{title ? title: name}</h1>
+        <p>{link}</p>
+    </a>
 }
