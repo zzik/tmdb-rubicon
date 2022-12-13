@@ -3,7 +3,7 @@ import { SearchContext, SearchStatusContext } from './context'
 
 export const SearchBar: React.FC = () => {
 
-    const { setSearchPhrase } = useContext(SearchContext)
+    const { searchPhrase, setSearchPhrase } = useContext(SearchContext)
     const { setSearchStatus } = useContext(SearchStatusContext)
 
     const handleSearch = (phrase: string) => {
@@ -21,8 +21,10 @@ export const SearchBar: React.FC = () => {
     return (
     <div className='search-bar'>
         <input
-        type='text' name='search' id='search' placeholder='Search..'
-        onChange={(e) => handleSearch(e.target.value)}/>
+        type='text' name='search' id='search' placeholder='Search..' defaultValue={searchPhrase}
+        onChange={(e) => {
+            handleSearch(e.target.value)
+            }} />
     </div>
     )
 
