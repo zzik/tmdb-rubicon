@@ -1,17 +1,23 @@
-import React, {useContext} from 'react'
-import { TypeContext } from "../App"
+import React, { useContext } from 'react'
+import { TypeContext } from './context'
 
+export const TypeControl: React.FC = () => {
 
-interface Props {
-    toggleContentType: () => void
-}
+    const {contentType, setContentType} = useContext(TypeContext)
+    
+    const handleType = (type:string) => setContentType(type)
 
-export const TypeControl: React.FC<Props> = ({toggleContentType}) => {
-    const context = useContext(TypeContext)
-        return (
-            <>
-                <button onClick={toggleContentType} disabled={context?.is==='Movies' ? true : false} >Movies</button>
-                <button onClick={toggleContentType} disabled={context?.is==='TV Series' ? true : false} >TV Series</button>
-            </>
-        )
+    return (
+    <div className='type-control'>
+        <button 
+        onClick={()=>handleType('movie')}
+        className={contentType === 'movie' ? 
+        'active' : 'inactive' } >
+            Movies</button>
+        <button 
+        onClick={()=>handleType('tv')}
+        className={contentType === 'tv' ? 'active' : 'inactive' } >
+            TV Shows</button>
+    </div>
+    )
 }
