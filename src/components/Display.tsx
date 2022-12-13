@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CardItem } from './CardItem'
-
 import { SearchContext, TypeContext, SearchStatusContext } from './context'
-
 import { fetchCollection, fetchTopRated } from './utils/fetch'
 
 export const Display: React.FC = () => {
