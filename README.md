@@ -1,7 +1,7 @@
 # The Movie Database API
 ## /important/ after visiting details view, do not refresh the page - back button will revert to index path, content type and search query will reset.
 
-## Node, Typescript, React test assignment.
+### Node, Typescript, React test assignment.
 
 ### Run the following commands in your terminal:
 ```
