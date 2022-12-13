@@ -1,0 +1,13 @@
+.type-control {
+    margin-bottom: 12px;
+    width: 15vw;
+}
+.type-control button {
+    padding: 4px 8px 4px 8px;
+    width: 50%;
+    font-size: 18px;
+}
+.type-control button:hover {
+    cursor: pointer;
+    background-color: rgb(233, 233, 255);
+}
