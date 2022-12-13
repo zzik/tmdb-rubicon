@@ -1,30 +1,29 @@
-import React, {useContext} from 'react'
-import { SearchContext } from "../App"
+import React, { useContext } from 'react'
+import { SearchContext, SearchStatusContext } from './context'
 
+export const SearchBar: React.FC = () => {
 
-interface Props {
-    searchPhrase: (event: React.ChangeEvent<HTMLInputElement>) => void
-}
+    const { setSearchPhrase } = useContext(SearchContext)
+    const { setSearchStatus } = useContext(SearchStatusContext)
 
-export const SearchBar: React.FC<Props> = ({searchPhrase}) => {
+    const handleSearch = (phrase: string) => {
+        setTimeout(() => {
+            if (phrase.length > 2) {
+                setSearchPhrase(phrase)
+                setSearchStatus(true)
+            } else {
+                setSearchPhrase('')
+                setSearchStatus(false)
+            }
+        }, 1000)
+    }
 
-    // todo not sure how to treat "e" parameter on line 12, htmlinput does not seem to fit the interface
-        const validate = (e: any) => { 
-            setTimeout(() => {
-                if (e.target.value.length > 2) {
-                    searchPhrase(e)
-                }
-            }, 1000);
-        }
+    return (
+    <div className='search-bar'>
+        <input
+        type='text' name='search' id='search' placeholder='Search..'
+        onChange={(e) => handleSearch(e.target.value)}/>
+    </div>
+    )
 
-        return (
-            <>
-                <input 
-                type='text'
-                name='search'
-                id='search'
-                onChange={validate}
-                />
-            </>
-        )
 }
