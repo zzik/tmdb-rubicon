@@ -1,0 +1,8 @@
+.visual-content {
+    width: 1280px;
+    height: 720px;
+}
+.visual-content iframe {
+    width: 100%;
+    height: 100%;
+}
