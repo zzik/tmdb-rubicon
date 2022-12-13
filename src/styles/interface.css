@@ -1,0 +1,15 @@
+/* @keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: .9;}
+} */
+
+.App {
+    padding: 3vh 16vw 6vh 16vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    
+}
+
