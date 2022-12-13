@@ -17,9 +17,12 @@ export const fetchVideos = async ({ contentType, id }: any) => {
     let request = await axios.get(videos)
 
     let data = request.data.results.find((el: any) => el.type === 'Trailer')
-
-    let link = 'https://youtube.com/embed/' + data.key
-    let name = data.name
+    let link, name
+    
+    if (data) {
+        link = 'https://youtube.com/embed/' + data.key
+        name= data.name
+    }
 
     return { link, name }
 }
