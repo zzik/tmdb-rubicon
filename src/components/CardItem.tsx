@@ -1,23 +1,49 @@
-import React, {useContext} from 'react'
-import { TypeContext } from './context/TypeContext'
-import {test} from './utils/index'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { TypeContext } from './context'
+import { fetchImageLinks } from './utils/fetch'
+import { environment } from './utils/index'
 
 interface Props {
     key: string,
     id: number,
     title?: string,
-    name?:string,
-    poster_path: string,
-    backdrop_path: string,
+    name?: string,
+    overview: string,
 }
 
-export const CardItem: React.FC<Props> = ({id, title, name, backdrop_path, poster_path}) => {
+export const CardItem: React.FC<Props> = ({ id, title, name, overview }) => {
 
-    const type = useContext(TypeContext).contentType
-    const link = test.url + type + `/${id}` + test.apiKey
+    const { contentType } = useContext(TypeContext)
+    const [imageLink, setImageLink] = useState('')
 
-    return <a href={link}>
-        <h1>{title ? title: name}</h1>
-        <p>{link}</p>
-    </a>
+    const handleImage = (payload: string) => {
+        payload.includes('undefined') ? setImageLink('undefined') : setImageLink(payload)
+    }
+
+    useEffect(() => {
+        fetchImageLinks({ contentType, id }).then(res => handleImage(res))
+    }, [])
+
+    const overviewText = overview.length ? <p>{`${overview}`}</p> : <h2>Description not available.</h2>
+
+    return (
+        // <a href={environment.url + contentType + "/" + id + environment.apiKey} className='card-item'>
+        <Link to={ contentType + "/" + id + environment.apiKey} className='card-item'>
+            <div className='card-item-image'>
+                {imageLink.includes('undefined') ?
+                    <div className='card-item-image-lost'>
+                        {overviewText}
+                        <h1>Image not found</h1>
+                    </div> :
+                    <div className='card-item-image-found'>
+                        {overviewText}
+                        <img src={imageLink} />
+                    </div>}
+            </div>
+            <div className='card-item-title'>
+                <h1>{title ? title : name}</h1>
+            </div>
+        </Link>
+    )
 }
