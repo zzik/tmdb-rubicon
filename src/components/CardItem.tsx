@@ -15,6 +15,7 @@ interface Props {
 export const CardItem: React.FC<Props> = ({ id, title, name, overview }) => {
 
     const { contentType } = useContext(TypeContext)
+
     const [imageLink, setImageLink] = useState('')
 
     const handleImage = (payload: string) => {
@@ -28,8 +29,7 @@ export const CardItem: React.FC<Props> = ({ id, title, name, overview }) => {
     const overviewText = overview.length ? <p>{`${overview}`}</p> : <h2>Description not available.</h2>
 
     return (
-        // <a href={environment.url + contentType + "/" + id + environment.apiKey} className='card-item'>
-        <Link to={ contentType + "/" + id + environment.apiKey} className='card-item'>
+        <Link to={'/'+ contentType + "/" + id } className='card-item'>
             <div className='card-item-image'>
                 {imageLink.includes('undefined') ?
                     <div className='card-item-image-lost'>
