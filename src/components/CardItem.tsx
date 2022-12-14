@@ -26,7 +26,7 @@ export const CardItem: React.FC<Props> = ({ id, title, name, overview }) => {
         fetchImageLinks({ contentType, id }).then(res => handleImage(res))
     }, [])
 
-    const overviewText = overview.length ? <p>{`${overview}`}</p> : <h2>Description not available.</h2>
+    const overviewText = overview.length ? <p>{`${overview}`}</p> : <p>Description not available.</p>
 
     return (
         <Link to={'/'+ contentType + "/" + id } className='card-item'>
