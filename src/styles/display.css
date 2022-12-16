@@ -12,4 +12,5 @@
     animation: fade-in 1s forwards;
     animation-timing-function: ease-in;
     -webkit-filter: blur(1);
+    -webkit-animation: fade-in 1s forwards;
 }
