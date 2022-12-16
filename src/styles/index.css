@@ -1,5 +1,4 @@
 @import './interface.css';
-@import './cardContainer.css';
 @import './cardDetails.css';
 @import './cardItem.css';
 @import './searchBar.css';
@@ -17,6 +16,8 @@
   padding: 0;
   box-sizing: border-box;
   transition: .25s ease-in-out;
-  /* animation: fade-in 1s forwards; animation-timing-function: ease-in; */
   font-family: 'Raleway', sans-serif;
 } 
+iframe {
+  border: 0;
+}
