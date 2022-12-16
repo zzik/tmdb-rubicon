@@ -2,9 +2,3 @@
     0% { opacity: 0; filter:blur(1) ; -webkit-filter:blur(1) ; }
     100% { opacity: 1; filter:blur(0) ; -webkit-filter:blur(0) ; }
 }
-
-@keyframes blacken {
-    0% {background-color: #000; color: #fff;}
-    30% {background-color: #333; color: rgb(214, 214, 214);}
-    100% {background-color: #fff; color: #000;}
-}
