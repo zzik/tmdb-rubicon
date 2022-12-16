@@ -1,4 +1,3 @@
-import { useContext } from "react";
 
 export const environment = {
     url: 'https://api.themoviedb.org/3/',
@@ -8,4 +7,3 @@ export const environment = {
     searchStatusQuery: 'search/',
     searchQuery: `&query=`,
 }
-

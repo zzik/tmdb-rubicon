@@ -4,15 +4,12 @@ import axios from 'axios'
 
 interface CollectionProps {
     contentType: string,
-    query?: string
 }
 
-export const fetchTopRated = async ({ contentType, query }: CollectionProps) => {
-    let { url } = environment, { apiKey } = environment, { searchQuery } = environment
+export const fetchTopRated = async ({ contentType }: CollectionProps) => {
+    let { url } = environment, { apiKey } = environment
 
-    let link = query ?
-        url + 'search/' + contentType + apiKey + `${searchQuery + query}` :
-        url + contentType + '/top_rated' + apiKey
+    let link = url + contentType + '/top_rated' + apiKey
 
     let first = await axios.get(link)
     let { data } = first
@@ -20,4 +17,3 @@ export const fetchTopRated = async ({ contentType, query }: CollectionProps) => 
 
     return final
 }
-
