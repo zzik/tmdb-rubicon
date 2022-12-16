@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TypeContext } from './context'
 import { fetchImageLinks } from './utils/fetch'
-import { environment } from './utils/index'
 
 interface Props {
-    key: string,
+    key: number,
     id: number,
     title?: string,
     name?: string,

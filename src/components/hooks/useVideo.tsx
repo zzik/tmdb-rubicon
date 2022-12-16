@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { SetStateAction, useEffect, useState } from "react"
 import { fetchVideos } from "../utils/fetch"
 
-// interface Proppies {
-//     contentType: string ,
-//     id:number | string | undefined
-// }
+interface Props {
+    link:string | undefined,
+    name:string | undefined
+}
 
-const useVideo = (contentType:any, id: any) => {
+const useVideo = (contentType:string, id:string | undefined) => {
 
-    const [data, setData] = useState<any>()
+    const [data, setData] = useState<Props | null>(null)
 
-    const handleData = (some:any) => {
-        setData(some)
+    const handleData = (props:Props | null) => {
+        setData(props)
     }
 
     useEffect(() => {

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 interface CollectionProps {
     contentType: string,
-    query?: string
+    query: string
 }
 
 export const fetchCollection = async ({ contentType, query }: CollectionProps) => {

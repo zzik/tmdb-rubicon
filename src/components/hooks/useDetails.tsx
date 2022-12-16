@@ -10,16 +10,21 @@ interface Props {
     poster_path: string
 }
 
-const useDetails = (prms: any) => {
+interface Params {
+    contype:string | undefined,
+    id: string | undefined
+}
 
-    const [data, setData] = useState<Props>()
+const useDetails = (params: Params) => {
 
-    const handleData = (some:Props) => {
-        setData(some)
+    const [data, setData] = useState<Props | null>(null)
+
+    const handleData = (props:Props) => {
+        setData(props)
     }
 
     useEffect(() => {
-        fetchItem({contentType: prms.contype, id: prms.id}).then(el => handleData(el.data))
+        fetchItem({contentType: params.contype, id: params.id}).then((el) => handleData(el.data))
     }, [])
 
     return data

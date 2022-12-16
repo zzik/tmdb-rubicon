@@ -3,8 +3,8 @@ import axios from 'axios'
 let { url } = environment, { apiKey } = environment, { imageUrl } = environment
 
 interface VisualProps {
-    contentType: string,
-    id: number
+    contentType: string | undefined,
+    id: string | number | undefined
 }
 
 export const fetchImageLinks = async ({ contentType, id}: VisualProps) => {

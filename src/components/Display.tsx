@@ -3,9 +3,16 @@ import { CardItem } from './CardItem'
 import { SearchContext, TypeContext, SearchStatusContext } from './context'
 import { fetchCollection, fetchTopRated } from './utils/fetch'
 
+interface Content {
+    id:number
+    name:string
+    title:string
+    overview:string
+}
+
 export const Display: React.FC = () => {
     const { contentType } = useContext(TypeContext), { searchStatus } = useContext(SearchStatusContext), { searchPhrase } = useContext(SearchContext)
-    const [content, setContent] = useState<any[]>([])
+    const [content, setContent] = useState<Content[]>([])
 
     useEffect(() => {
         searchStatus ?
@@ -24,7 +31,8 @@ export const Display: React.FC = () => {
             overview={item.overview}
         />)
 
-    return (
+
+        return (
         <div className='display'>
             {items}
         </div>

@@ -1,10 +1,10 @@
 import { environment } from '../index'
 import axios from 'axios'
-let { url } = environment, { apiKey } = environment, { searchQuery } = environment
+let { url, apiKey } = environment
 
 interface ItemProps {
-    contentType: string,
-    id: number,
+    contentType: string | undefined,
+    id: string | undefined,
 }
 
 export const fetchItem = async ({ contentType, id }: ItemProps) => {
@@ -13,9 +13,3 @@ export const fetchItem = async ({ contentType, id }: ItemProps) => {
 
     return request
 }
-
-/*
-secure_base_url: "https://image.tmdb.org/t/p/"
-backdrop_sizes: ['w300', 'w780', 'w1280', 'original']
-poster_sizes: ['w92', 'w154', 'w185', 'w342', 'w500', 'w780', 'original']
-*/
