@@ -8,6 +8,18 @@
     width: 100%;
     font-size: 18px;
     font-weight: 500;
+    border-radius: 65px ;
+    -webkit-border-radius: 65px ;
+    -moz-border-radius: 65px ;
+    -ms-border-radius: 65px ;
+    -o-border-radius: 65px ;
+}
+.search-bar input:focus {
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
 }
 .active-search {
     border-radius: 5px ;
