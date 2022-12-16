@@ -11,3 +11,10 @@
     cursor: pointer;
     background-color: rgb(233, 233, 255);
 }
+
+/* start of responsive */
+@media (max-width:1400px) {
+    .type-control {
+        width: 100%;
+    }
+}
