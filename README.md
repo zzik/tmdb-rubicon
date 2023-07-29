@@ -1,5 +1,4 @@
 # The Movie Database API
-### /important/ after visiting details view, do not refresh the page - back button will revert to index path, content type and search query will reset.
 
 Live
 [version](https://tmdb-rbc.netlify.app/)
